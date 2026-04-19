@@ -10,18 +10,29 @@ export type TaskCategory =
   | "home"
   | "other";
 
-export type TaskPriority =
-  | "Low"
-  | "Medium"
-  | "High";
+export type TaskPriority = "Low" | "Medium" | "High";
+
+export type TaskPeriod =
+  | "Daily"
+  | "Weekly"
+  | "Monthly"
+  | "Yearly";
+
+export type TaskFilterPeriod =
+  | "All"
+  | "Daily"
+  | "Weekly"
+  | "Monthly"
+  | "Yearly";
 
 export interface NewTaskPayload {
   title: string;
   notes?: string;
   category: TaskCategory;
   priority: TaskPriority;
-  alarmEnabled: boolean;
+  period: TaskPeriod;
   reminderTime?: Date;
+  pushNotificationsEnabled: boolean;
 }
 
 export interface CreatedTask {
@@ -32,7 +43,9 @@ export interface CreatedTask {
   completed: boolean;
   priority: TaskPriority;
   notes?: string;
+  period: TaskPeriod;
   reminderTime?: string;
+  deadline?: string;
 }
 
 export interface NewTaskResponse {

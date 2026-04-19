@@ -3,6 +3,12 @@ export type TaskPriority =
   | "Medium"
   | "High";
 
+  export type TaskPeriod =
+  | "Daily"
+  | "Weekly"
+  | "Monthly"
+  | "Yearly";
+
 export interface Task {
   id: number;
   title: string;
@@ -21,6 +27,7 @@ export interface Task {
   completed: boolean;
   priority: TaskPriority;
   notes?: string;
+  period: TaskPeriod;
 }
 
 export interface Motivation {
